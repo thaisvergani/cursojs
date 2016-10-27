@@ -1,35 +1,38 @@
 var carros = ['vectra', 'gol', 'sentra'];
-// pop - remove o ultimo
-carros.pop();
-console.log(carros);
 
-//length
-console.log(carros.length);
+//filter - devolve array
+var resultado = carros.filter(function (value){
+    return value == 'gol'
+})
+console.log(resultado);
 
-//push - adiciona no final
-carros.push('celta');
-console.log(carros);
-
-//shift - remove o primeiro
-carros.shift();
-console.log(carros);
-
-//unshift - acrescenta no inicio 
-carros.unshift('fusca');
-console.log(carros);
-
-//splice - retorna qtd de itens a partir da posicao 
-carro = carros.splice(1, 1);
-console.log(carros);
-
-var getcarro = function(posicao, qtd){
-    var carros = ['vectra', 'gol', 'sentra'];
-    return carros.splice(posicao, qtd);
-}
-
-var novoscarros = getcarro(1, 2);
-console.log(novoscarros);
+    //seria  a mesma coisa que isso:
+    carros.forEach(function (item) {
+        if (item == 'gol'){
+            var carro = Array(item);
+            console.log(carro);
+        }
+    })
 
 
-var novalista = carros.slice();
-console.log(novalista);
+//some - percorre o array procurando algum 'gol' - devolve true or false
+var some_teste = carros.some(function (value){
+    return value == 'gol';
+})
+console.log(some_teste);
+
+//find - compara - devolve string
+var find_teste = carros.find(function (value){
+    return value == 'gol';
+})
+console.log(find_teste);
+
+//reduce
+var numeros = [10, 20, 1];
+var reduce_teste = numeros.reduce(function (total, nro){
+    return total + nro;
+})
+console.log(reduce_teste);
+
+
+
