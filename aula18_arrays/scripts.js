@@ -30,6 +30,6 @@ var getcarro = function(posicao, qtd){
 var novoscarros = getcarro(1, 2);
 console.log(novoscarros);
 
-
+// slice - copia o array
 var novalista = carros.slice();
 console.log(novalista);
